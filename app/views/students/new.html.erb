@@ -1,0 +1,22 @@
+<h1>GeekKobe</h1>
+<h3>新規投稿</h3>
+<%= form_for @student do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, :size => 140 %>
+    </div>
+    <div class="field">
+        <%= f.label :profile %>
+        <%= f.text_field :profile, :size => 140 %>
+    </div>
+    <div class="field">
+    <%= f.label :mentor %>
+    <%= f.text_field :mentor, :size => 140 %>
+    </div>
+    <div class="field">
+    <%= f.label :grade %>
+    <%= f.text_field :grade, :size => 140 %>
+    </div>
+<%= f.submit "投稿する" %>
+<% end %>
+<%= link_to "投稿一覧に戻る", students_path %>

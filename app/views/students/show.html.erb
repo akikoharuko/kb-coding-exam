@@ -1,0 +1,12 @@
+<h1>GeekKobe</h1>
+<h3>投稿詳細</h3>
+<div class="student">
+  <p><%= @student.name %></p>
+  <p><%= @student.profile %></p>
+  <p><%= @student.mentor %></p>
+  <p><%= @student.grade %></p>
+  <p><%= @student.created_at %></p>
+</div>
+
+<%= link_to "編集する", edit_student_path(@student.id) %>
+<%= link_to "投稿一覧に戻る", students_path %>

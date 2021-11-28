@@ -1,0 +1,12 @@
+<%= form_for @student do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 140 %>
+    <%= f.label :profile %>
+    <%= f.text_field :profile, :size => 140 %>
+    <%= f.label :mentor %>
+    <%= f.text_field :mentor, :size => 140 %>
+    <%= f.label :grade %>
+    <%= f.text_field :grade, :size => 140 %>
+    
+    <%= f.submit "編集する" %>
+<% end %>

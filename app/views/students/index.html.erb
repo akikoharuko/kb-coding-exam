@@ -1,0 +1,26 @@
+<h1>GeekKobe</h1>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<h3>投稿一覧</h3>
+
+<h3>投稿を検索</h3>
+    <%= form_tag({controller:"students",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する'  %>
+    <% end %>
+
+<%= link_to "新規投稿へ", new_student_path %>
+<div class="students-container">
+    <% @students.each do |t| %>
+        <div class="student">
+            <%= t.user.email %>
+            <%= t.name %>
+            <%= t.profile %>
+            <%= t.mentor %>
+            <%= t.grade %>
+            <%= t.created_at %>
+            <%= link_to "詳細", student_path(t.id) %>
+            <%= link_to "編集", edit_student_path(t.id) %>
+            <%= button_to "削除", student_path(t.id), method: :delete %>
+        </div>
+    <% end %>
+</div>
